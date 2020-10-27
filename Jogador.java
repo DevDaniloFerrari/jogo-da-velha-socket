@@ -8,6 +8,7 @@ public class Jogador extends Thread {
     public Jogador(Socket cliente) {
         this.cliente = cliente;
         // comunicacao = new Comunicacao(cliente);
+        this.start();
     }
 
     @Override

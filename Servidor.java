@@ -34,25 +34,23 @@ public class Servidor {
 
                 Jogador jogador = new Jogador(cliente);
                 jogadores.add(jogador);
-                jogador.start();
+
             }
 
         } catch (Exception e) {
             System.out.println("Erro: " + e.getMessage());
         }
 
-        System.out.println("vazando");
+        while (true) {
+            System.out.println("Servidor ligado");
+            clearScreen();
+        }
 
-        // try {
-        // do {
-        // mensagem = entrada.nextLine();
-        // System.out.println(mensagem);
-
-        // saida = new PrintStream(cliente.getOutputStream());
-        // saida.println("Recebi sua mensagem cliente!");
-        // } while (true);
-        // } catch (Exception e) {
-        // System.out.println("Erro durante a comunicação com o cliente.");
-        // }
     }
+
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
 }
